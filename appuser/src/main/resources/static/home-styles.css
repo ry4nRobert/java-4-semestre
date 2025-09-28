@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo-principal: #f5f5f5;
+    --texto: #222222;
+    --texto-inverso: #ffffff;
+    --destaque: #0077ff;
+    --destque-inverso: #66bbff;
+    --fundo-card: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5em;
+    background-color: var(--fundo-principal);
+    color: var(--texto);
+}
+
+header {
+    background-color: var(--destaque);
+    color: var(--texto);
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* centralizado */
+    align-items: center;
+}
+
+
+nav#menu {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav#menu ul {
+    list-style: none;
+    display: flex;       /* faz os <li> ficarem lado a lado */
+    gap: 15px;           /* espaço entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+nav#menu li {
+    display: inline;     /* opcional, já funciona só com flex */
+}
+
+
+nav#menu a {
+    color: var(--texto-inverso);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav#menu a:hover {
+    background-color: var(--destque-inverso);
+    color: var(--texto-inverso);
+}
