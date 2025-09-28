@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Esqueceu a Senha</title>
+    <link rel="stylesheet" th:href="@{/esqueceu-styles.css}">
+</head>
+<body>
+  <div class="esqueceu-senha">
+    <form th:action="@{/esqueceu-senha}" method="post">
+      <h2>Esqueceu a Senha</h2>
+
+      <div th:if="${param.error != null}">
+        <div class="error-message" th:switch="${param.error[0]}">
+          <span th:case="'email'">Erro ao enviar o código. Tente novamente.</span>
+          <span th:case="'email-nao-encontrado'">E-mail não encontrado.</span>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <input type="email" name="email" required placeholder=" ">
+        <label>Digite seu e-mail</label>
+      </div>
+
+      <button type="submit">Enviar Código</button>
+      <a th:href="@{/login}" class="back-link">Voltar</a>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Senha</title>
+    <link rel="stylesheet" th:href="@{/esqueceu-styles.css}">
+</head>
+<body>
+  <div class="esqueceu-senha">
+  <form th:action="@{/definir-nova-senha}" method="post">
+  <h2>Definir Nova Senha</h2>
+  
+  <div th:if="${param.error != null}">
+    <div class="error-message" th:switch="${param.error[0]}">
+      <span th:case="'senhas-nao-coincidem'">As senhas não coincidem. Tente novamente.</span>
+    </div>
+  </div>
+  
+  <input type="hidden" name="token" th:value="${param.token}">
+  
+  <div class="input-field">
+    <input type="password" name="novaSenha" required placeholder=" ">
+    <label>Nova Senha</label>
+  </div>
+  
+  <div class="input-field">
+    <input type="password" name="confirmarSenha" required placeholder=" ">
+    <label>Confirmar Nova Senha</label>
+  </div>
+  
+  <button type="submit">Definir Nova Senha</button>
+  <a th:href="@{/esqueceu-senha}" class="back-link">Voltar</a>
+</form>
+  </div>
+</body>
+</html>
