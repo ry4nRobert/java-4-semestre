@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(/img/login-medico.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.esqueceu-senha {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-field input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.input-field input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+    font-size: 0.8rem;
+    top: 8px;
+    transform: translateY(-120%);
+}
+
+.esqueceu-senha a {
+    color: #efefef;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    display: inline-block;
+}
+
+.esqueceu-senha a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    margin-top: 15px;
+    width: 100%;
+}
+
+button:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff6b6b;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    line-height: 1.4;
+}
+
+.success-message {
+    background: rgba(0, 255, 0, 0.1);
+    color: #51cf66;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid rgba(81, 207, 102, 0.3);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    line-height: 1.4;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 480px) {
+    body {
+        padding: 0 15px;
+    }
+    
+    .esqueceu-senha {
+        padding: 25px 15px;
+        margin: 15px 0;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    p {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .input-field {
+        margin: 12px 0;
+    }
+    
+    .input-field input {
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .input-field label {
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    .back-link {
+        margin-top: 15px;
+    }
+    
+    .error-message,
+    .success-message {
+        padding: 10px 12px;
+        margin-bottom: 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .esqueceu-senha {
+        padding: 20px 12px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .input-field input {
+        height: 32px;
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .esqueceu-senha a,
+    .back-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    
+    .esqueceu-senha {
+        padding: 40px 30px;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (min-height: 800px) {
+    body {
+        min-height: 100vh;
+        padding: 40px 10px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    button:hover {
+        color: #000;
+        border-color: transparent;
+        background: #fff;
+    }
+    
+    .esqueceu-senha a:hover {
+        text-decoration: none;
+    }
+    
+    button:active {
+        color: #fff;
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+button:focus,
+.input-field input:focus,
+.esqueceu-senha a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
