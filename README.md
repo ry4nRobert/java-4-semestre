@@ -68,7 +68,85 @@
 <p><strong>Consulta:</strong> Representa um agendamento médico, com atributos como data, horário e nome do paciente.</p>
 
 <h3>Tabelas:</h3>
-<p></p>
+
+<h4>Tabela: registro</h4>
+
+<p>Propósito: Guarda os dados dos usuários do sistema (médicos).
+
+Colunas:
+
+id (Primary Key, bigint, AI)
+
+nome (varchar(255))
+
+email (varchar(255), Único)
+
+senha (varchar(255))
+
+reset_token (varchar(255)) (Nota: Coluna antiga, não é funcional)
+
+reset_token_expiry_date (datetime(6)) (Nota: Coluna antiga, não é funcional)
+
+foto_perfil (LONGBLOB) </p>
+
+<h4>Tabela: especialidades</h4>
+
+<p>Propósito: Lista fixa de especialidades médicas.
+
+Colunas:
+
+id (Primary Key, bigint, AI)
+
+nome (varchar(255))
+
+Tabela: registro_especialidades
+Propósito: Tabela de ligação ManyToMany (relação muitos-para-muitos) entre as tabelas registro e especialidades.
+
+Colunas:
+
+registro_id (Primary Key, Foreign Key para registro.id, bigint)
+
+especialidade_id (Primary Key, Foreign Key para especialidades.id, bigint) </p>
+
+<h4>Tabela: paciente</h4>
+
+<p>Propósito: Armazena informações dos pacientes.
+
+Colunas:
+
+id (Primary Key, bigint, AI)
+
+nome (varchar(255))
+
+idade (int)
+
+cpf (varchar(255))
+
+alergias (varchar(255))
+
+historico_cirurgias (varchar(255))
+
+medico_id (Foreign Key para registro.id, bigint)
+
+data_criacao (datetime(6))
+
+observacoes (varchar(255)) </p>
+
+<h4>Tabela: consulta</h4>
+
+<p>Propósito: Armazena o registro de consultas entre um médico e um paciente.
+
+Colunas:
+
+id (Primary Key, bigint, AI)
+
+medico_id (Foreign Key para registro.id, bigint)
+
+paciente_id (Foreign Key para paciente.id, bigint)
+
+data_hora (datetime(6))
+
+observacoes (longtext) </p>
 
 <br>
 
