@@ -20,11 +20,23 @@
     </ul>
     <br>
 
-    <h1>3. Funções/Lista de Eventos - RF / RNF</h1>
-    <p>
-        Oi
-    </p>
-    <br>
+
+<h3>Requisitos Funcionais (RF):</h3>
+<ul>
+    <li><strong>RF1:</strong> O sistema deverá permitir o cadastro de médicos com informações como nome, especialidade, e-mail e senha.</li>
+    <li><strong>RF2:</strong> O sistema deverá permitir o cadastro completo de pacientes, incluindo dados pessoais, histórico médico e informações de contato.</li>
+    <li><strong>RF3:</strong> O sistema deverá possibilitar o agendamento de consultas através de um calendário integrado, com seleção de data, horário e paciente.</li>
+    <li><strong>RF4:</strong> O sistema deverá gerar relatórios analíticos com gráficos sobre a prática médica (número de consultas e etc.).</li>
+    <li><strong>RF5:</strong> O sistema deverá permitir a visualização e edição do prontuário eletrônico dos pacientes.</li>
+</ul>
+
+<h3>Requisitos Não Funcionais (RNF):</h3>
+<ul>
+    <li><strong>RNF1:</strong> A aplicação deverá ser responsiva, funcionando de forma otimizada em dispositivos móveis e desktops.</li>
+    <li><strong>RNF2:</strong> O sistema deve ter tempo de resposta inferior a 3 segundos para todas as operações realizadas pelo usuário.</li>
+    <li><strong>RNF3:</strong> O sistema deve ser desenvolvido com interface intuitiva e de fácil usabilidade para profissionais da saúde.</li>
+</ul>
+    
    <h1>4. Especificação de Programas</h1>
 
 <h3>Layout da Tela</h3>
