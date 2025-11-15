@@ -21,7 +21,7 @@
     <br>
 
 
-<h3>Requisitos Funcionais (RF):</h3>
+<h3>3. Requisitos Funcionais (RF):</h3>
 <ul>
     <li><strong>RF1:</strong> O sistema deverá permitir o cadastro de médicos com informações como nome, especialidade, e-mail e senha.</li>
     <li><strong>RF2:</strong> O sistema deverá permitir o cadastro completo de pacientes, incluindo dados pessoais, histórico médico e informações de contato.</li>
