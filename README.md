@@ -4,65 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação - MedLink</title>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-
-        h1 {
-            color: #2c5aa0;
-            border-left: 5px solid #2c5aa0;
-            padding-left: 15px;
-            margin-top: 40px;
-        }
-
-        h2 {
-            color: #3a6bc0;
-            margin-top: 30px;
-        }
-
-        h3 {
-            color: #4a7bc8;
-            margin-top: 25px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        li {
-            margin-bottom: 8px;
-            padding-left: 5px;
-        }
-
-        strong {
-            color: #2c5aa0;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
 </head>
 <body>
     <h1>1. Introdução</h1>
