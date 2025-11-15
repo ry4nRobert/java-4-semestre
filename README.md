@@ -75,12 +75,6 @@
 <h1>5. Diagrama de Classe</h1>
 <p>Enviado através de um arquivo pdf separado.</p>
 
-<br>
-
-<h1>6. Aplicação Web/Mobile</h1>
-<h3>Tela de login</h3>
-<p>Tela onde o Usuário depois de cadastrado, pode fazer o seu login usando e-mail e senha.</p>
-
 
 </body>
 </html>
