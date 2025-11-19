@@ -11,7 +11,23 @@
 <p>Dessa forma, o MedLink se apresenta como uma solução eficiente e confiável que não apenas auxilia na organização, mas resolve um problema específico: a gestão inadequada de agendas médicas, promovendo mais eficiência e qualidade no atendimento ao paciente.</p>
     <br>
 
-<h1>2. Objetivos da Aplicação</h1>
+
+<h1>2. Tecnologias usadas</h1>
+    <p>
+    Java - 21+
+    OpendJDK - 21.0.8
+    Spring framework - 3.5.7
+    Banco de dados MySQL - 8.0.33
+    HTML5
+    CSS3
+    JS
+    Thymeleaf
+    Maven
+    Chart.js
+        
+</p>
+
+<h1>3. Objetivos da Aplicação</h1>
     <ul>
         <li>Centralizar e gerenciar o prontuário eletrônico dos pacientes</li>
         <li>Fornecer relatórios analíticos com gráficos sobre a prática médica</li>
@@ -21,7 +37,7 @@
     <br>
 
 
-<h3>3. Requisitos Funcionais (RF):</h3>
+<h3>4. Requisitos Funcionais (RF):</h3>
 <ul>
     <li><strong>RF1:</strong> O sistema deverá permitir o cadastro de médicos com informações como nome, especialidade, e-mail e senha.</li>
     <li><strong>RF2:</strong> O sistema deverá permitir o cadastro completo de pacientes, incluindo dados pessoais, histórico médico e informações de contato.</li>
@@ -37,7 +53,7 @@
     <li><strong>RNF3:</strong> O sistema deve ser desenvolvido com interface intuitiva e de fácil usabilidade para profissionais da saúde.</li>
 </ul>
     
-   <h1>4. Especificação de Programas</h1>
+   <h1>5. Especificação de Programas</h1>
 
 <h3>Layout da Tela</h3>
 <ul>
@@ -150,7 +166,7 @@ observacoes (longtext) </p>
 
 <br>
 
-<h1>5. Diagrama de Classe</h1>
+<h1>6. Diagrama de Classe</h1>
 <p>Enviado através de um arquivo pdf separado.</p>
 
 
