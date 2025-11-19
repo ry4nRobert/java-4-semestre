@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" th:href="@{css/registro-styles.css}">
+    <link rel="icon" type="image/png" th:href="@{/img/favicon.png}"/>
+</head>
+<body>
+    <div class="registro">
+        <form th:action="@{/registro}" method="post" th:object="${usuario}">
+            <h2>Registro</h2>
+            
+            <div class="input-field">
+                <input type="text" th:field="*{nome}" required 
+                       pattern="[A-Za-zÀ-ú\s]+" 
+                       title="O nome deve conter apenas letras e espaços."
+                       >
+                <label>Insira seu nome</label>
+            </div>
+            <div class="input-field">
+                <input type="email" th:field="*{email}" required>
+                <label>Insira seu email:</label>
+            </div>
+            <div class="input-field">
+                <input type="password" th:field="*{senha}" required>
+                <label>Insira sua senha</label>
+            </div>
+            <div class="input-field">
+                <input type="password" name="confirmacaoSenha" required>
+                <label>Confirme sua senha</label>
+            </div>
+
+            <div class="input-field">
+                <div class="custom-dropdown" id="dropdown">
+                    <div class="dropdown-btn">Selecione especialidades ▾</div>
+                    <ul class="dropdown-list"></ul>
+                </div>
+                <input type="hidden" name="especialidadesIds" id="especialidadesIds">
+            </div>
+
+            <div th:if="${erro}" class="form-error">
+                <span th:text="${erro}"></span>
+            </div>
+            <button type="submit">Registrar</button>
+            <div class="register">
+                <p>Já tem uma conta? <a th:href="@{/login}">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.getElementById('dropdown');
+            const dropdownBtn = dropdown.querySelector('.dropdown-btn');
+            const dropdownList = dropdown.querySelector('.dropdown-list');
+            const hiddenInput = document.getElementById('especialidadesIds');
+            let selectedValues = [];
+
+            // Buscar especialidades da API
+            fetch('/api/especialidades')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(especialidade => {
+                        const li = document.createElement('li');
+                        li.textContent = especialidade.nome;
+                        li.dataset.value = especialidade.id;
+
+                        li.addEventListener('click', () => {
+                            const value = li.dataset.value;
+
+                            if (selectedValues.includes(value)) {
+                                selectedValues = selectedValues.filter(v => v !== value);
+                                li.classList.remove('selected');
+                            } else {
+                                if (selectedValues.length >= 2) {
+                                    alert("Você só pode selecionar até 2 especialidades.");
+                                    return;
+                                }
+                                selectedValues.push(value);
+                                li.classList.add('selected');
+                            }
+
+                            hiddenInput.value = selectedValues.join(',');
+
+                            if (selectedValues.length > 0) {
+                                dropdownBtn.textContent = `${selectedValues.length} selecionada(s) ▾`;
+                            } else {
+                                dropdownBtn.textContent = "Selecione especialidades ▾";
+                            }
+                        });
+
+                        dropdownList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Erro ao buscar especialidades:', error));
+
+            // Abrir/fechar dropdown
+            dropdownBtn.addEventListener('click', () => {
+                dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Fechar ao clicar fora
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
