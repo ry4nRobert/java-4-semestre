@@ -167,7 +167,7 @@ observacoes (longtext) </p>
 <br>
 
 <h1>5. Diagrama de Classe</h1>
-<p>Enviado através de um arquivo pdf separado.</p>
+<p>Possivel encontrar todos os diagramas na pasta "Diagrama de classe".</p>
 
 
 </body>
